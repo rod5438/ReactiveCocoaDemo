@@ -14,6 +14,7 @@
 		968ED49D1CA268C300509D0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968ED49B1CA268C300509D0B /* Main.storyboard */; };
 		968ED49F1CA268C300509D0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 968ED49E1CA268C300509D0B /* Assets.xcassets */; };
 		968ED4A21CA268C300509D0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968ED4A01CA268C300509D0B /* LaunchScreen.storyboard */; };
+		96A041261CA3AEE300E5DF75 /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A041251CA3AEE300E5DF75 /* ViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		968ED49E1CA268C300509D0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		968ED4A11CA268C300509D0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		968ED4A31CA268C300509D0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96A041241CA3AEE300E5DF75 /* ViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel.h; sourceTree = "<group>"; };
+		96A041251CA3AEE300E5DF75 /* ViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				968ED4A01CA268C300509D0B /* LaunchScreen.storyboard */,
 				968ED4A31CA268C300509D0B /* Info.plist */,
 				968ED4921CA268C300509D0B /* Supporting Files */,
+				96A041241CA3AEE300E5DF75 /* ViewModel.h */,
+				96A041251CA3AEE300E5DF75 /* ViewModel.m */,
 			);
 			path = ReactiveCocoaDemo;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			files = (
 				968ED49A1CA268C300509D0B /* ViewController.m in Sources */,
 				968ED4971CA268C300509D0B /* AppDelegate.m in Sources */,
+				96A041261CA3AEE300E5DF75 /* ViewModel.m in Sources */,
 				968ED4941CA268C300509D0B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
