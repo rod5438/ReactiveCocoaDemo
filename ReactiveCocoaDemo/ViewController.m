@@ -8,14 +8,12 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 
-
-@property IBOutlet UISlider *MVC_Slider;
-@property IBOutlet UILabel *MVC_Label;
-
-@property IBOutlet UISlider *MVVM_Slider;
-@property IBOutlet UILabel *MVVM_Label;
+@property IBOutlet UITextField *height;
+@property IBOutlet UITextField *weight;
+@property IBOutlet UITextField *BMI;
+@property IBOutlet UITextField *result;
 
 @end
 
@@ -24,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,10 +31,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)valueChanged:(UISlider *)sender
+- (void)textFieldTextDidChange:(id)sender
 {
-    NSString *displayNumber = [NSString stringWithFormat:@"%.4lf", sender.value];
-    self.MVC_Label.text = displayNumber;
+    [self updateBMITextField];
+}
+
+- (void)updateBMITextField
+{
+    CGFloat height = [self.height.text floatValue];
+    CGFloat weight = [self.weight.text floatValue];
+    CGFloat BMI = weight / (height/100 * height/100);
+    self.BMI.text = [NSString stringWithFormat:@"%.2lf", BMI];
 }
 
 @end
