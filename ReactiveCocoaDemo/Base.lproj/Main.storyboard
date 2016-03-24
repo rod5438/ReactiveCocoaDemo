@@ -75,10 +75,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="BMI" destination="jCa-Q4-d96" id="4ws-kV-e7C"/>
-                        <outlet property="height" destination="oLf-T6-Rfq" id="elt-k2-5LH"/>
-                        <outlet property="result" destination="dyp-iU-rgM" id="INd-X8-BQD"/>
-                        <outlet property="weight" destination="Onu-g3-q1T" id="WVS-f3-XPI"/>
+                        <outlet property="BMITextField" destination="jCa-Q4-d96" id="S8x-c2-hCi"/>
+                        <outlet property="heightTextField" destination="oLf-T6-Rfq" id="GSW-gu-ebY"/>
+                        <outlet property="resultTextField" destination="dyp-iU-rgM" id="IsC-AR-bEL"/>
+                        <outlet property="weightTextField" destination="Onu-g3-q1T" id="8GV-mb-hCz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

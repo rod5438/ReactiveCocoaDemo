@@ -10,10 +10,14 @@
 
 @interface ViewController () <UITextFieldDelegate>
 
-@property IBOutlet UITextField *height;
-@property IBOutlet UITextField *weight;
-@property IBOutlet UITextField *BMI;
-@property IBOutlet UITextField *result;
+@property IBOutlet UITextField *heightTextField;
+@property IBOutlet UITextField *weightTextField;
+@property IBOutlet UITextField *BMITextField;
+@property IBOutlet UITextField *resultTextField;
+
+@property CGFloat height;
+@property CGFloat weight;
+@property CGFloat BMI;
 
 @end
 
@@ -33,15 +37,51 @@
 
 - (void)textFieldTextDidChange:(id)sender
 {
+    [self updateBMI];
+    [self updateTextField];
+}
+
+- (void)updateBMI
+{
+    self.height = [self.heightTextField.text floatValue];
+    self.weight = [self.weightTextField.text floatValue];
+    self.BMI = self.weight / (self.height/100 * self.height/100);
+}
+
+- (void)updateTextField
+{
     [self updateBMITextField];
+    [self updateResultTextField];
 }
 
 - (void)updateBMITextField
 {
-    CGFloat height = [self.height.text floatValue];
-    CGFloat weight = [self.weight.text floatValue];
-    CGFloat BMI = weight / (height/100 * height/100);
-    self.BMI.text = [NSString stringWithFormat:@"%.2lf", BMI];
+    self.BMITextField.text = [NSString stringWithFormat:@"%.2lf", self.BMI];
+}
+
+- (void)updateResultTextField
+{
+    if (self.BMI < 18.5) {
+        self.resultTextField.text = @"體重過輕";
+    }
+    else if (self.BMI >=18.5 && self.BMI < 24.0) {
+        self.resultTextField.text = @"健康體位";
+    }
+    else if (self.BMI >=24.0 && self.BMI < 27.0) {
+        self.resultTextField.text = @"快要過重";
+    }
+    else if (self.BMI >=27.0 && self.BMI < 30.0) {
+        self.resultTextField.text = @"輕度肥胖";
+    }
+    else if (self.BMI >=30.0 && self.BMI < 35.0) {
+        self.resultTextField.text = @"中度肥胖";
+    }
+    else if (self.BMI >= 35.0) {
+        self.resultTextField.text = @"重度肥胖";
+    }
+    else {
+        self.resultTextField.text = nil;
+    }
 }
 
 @end
